@@ -62,7 +62,7 @@ load("thrust_curve.mat")
 Thrust = @(y) interp1(h, T, y, "linear");
 
 %% Windload
-avg_Windspeed = 10; %m/s (average 2022 June FAR Site Data: 11.7 mph)
+avg_Windspeed = 0; %m/s (average 2022 June FAR Site Data: 11.7 mph)
 % Windspeed = @(t) (10 + 3*rand(1))*sin(t);
 Rocket_WindloadArea = Rocket_Diameter*Rocket_Height;
 WindLoad = @(y) 1/2*AirDensityFromAltitude(y)*(avg_Windspeed+randi([-3,3],1,1))^2*Rocket_WindloadArea;
